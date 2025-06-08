@@ -1,6 +1,7 @@
 
 import React from 'react';
-import speaker from '../assets/images/speaker.png';
+
+import speaKer from '../assets/images/speaker.png';
 
 
 export default function ZX9Speaker() {
@@ -24,7 +25,7 @@ export default function ZX9Speaker() {
           {/* Speaker Image (positioned at bottom) */}
           <div className="absolute bottom-0 left-0 lg:relative lg:w-1/2 flex justify-center items-end h-full order-2 lg:order-1">
             <img
-              src={speaker}
+              src={speaKer}
               alt="ZX9 Speaker"
               className="w-[200px] md:w-[280px] lg:w-[350px] object-contain z-10"
               style={{ 
