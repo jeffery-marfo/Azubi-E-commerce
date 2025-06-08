@@ -1,4 +1,4 @@
-import speakerImage from '../../assets/images/speaker.png';
+import speaKer from '../../assets/images/Speaker.png';
 
 export default function ZX9SpeakerSection() {
   return (
@@ -9,7 +9,7 @@ export default function ZX9SpeakerSection() {
           <div className="order-2 lg:order-1">
             <div className="bg-gray-100 rounded-lg aspect-square flex items-center justify-center overflow-hidden p-8">
               <img 
-                src={speakerImage}
+                src={speaKer}
                 alt="ZX9 Speaker"
                 className="w-full h-full object-contain max-w-[280px] max-h-[280px]"
               />
