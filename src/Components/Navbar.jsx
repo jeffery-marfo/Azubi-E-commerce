@@ -5,7 +5,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-[#191919] relative">
+    <nav className="bg-[#0E0E0E] relative">
       <div className="px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           {/* Mobile menu button */}
