@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X, ShoppingCart } from 'lucide-react';
+import { Link } from 'react-router';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,18 +24,18 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            <a href="#" className="text-white hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
+            <Link to="/" className="text-white hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
               HOME
-            </a>
-            <a href="#" className="text-white hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
+            </Link>
+            <Link to="/headphones" className="text-white hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
               HEADPHONES
-            </a>
-            <a href="#" className="text-white hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
+            </Link>
+            <Link to="/speakers" className="text-white hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
               SPEAKERS
-            </a>
-            <a href="#" className="text-white hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
+            </Link>
+            <Link to="'earphones" className="text-white hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
               EARPHONES
-            </a>
+            </Link>
           </div>
 
           {/* Cart icon */}
@@ -47,18 +48,18 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="md:hidden absolute top-24 left-0 right-0 bg-white z-50 border-t">
             <div className="flex flex-col space-y-4 p-6">
-              <a href="#" className="text-black hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
+              <Link to="/" className="text-black hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
                 HOME
-              </a>
-              <a href="#" className="text-black hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
+              </Link>
+              <Link to="/headphones" className="text-black hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
                 HEADPHONES
-              </a>
-              <a href="#" className="text-black hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
+              </Link>
+              <Link to="/speakers" className="text-black hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
                 SPEAKERS
-              </a>
-              <a href="#" className="text-black hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
+              </Link>
+              <Link to="/earphones" className="text-black hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
                 EARPHONES
-              </a>
+              </Link>
             </div>
           </div>
         )}
