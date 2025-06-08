@@ -11,7 +11,7 @@ export default function ProductSection() {
               <img 
                 src={headphoneImg} 
                 alt="XX99 Mark II Headphones"
-                className="w-[100] h-[100] object-cover"
+                className="w-full h-full object-contain max-w-[320px] max-h-[320px]"
               />
             </div>
           </div>
