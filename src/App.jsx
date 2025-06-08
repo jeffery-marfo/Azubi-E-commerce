@@ -4,6 +4,7 @@ import Landing from "./Pages/Landing";
 import RootLayouts from "./layouts/RootLayouts";
 import Headphones from "./Pages/Headphones";
 import Speakers from "./Pages/Speakers";
+import Earphones from "./Pages/Earphones";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route index={true} element={<Landing />} />
           <Route path='/headphones' element={<Headphones/>}/>
           <Route path='/speakers' element={<Speakers/>}/>
+          <Route path='/earphones' element={<Earphones/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

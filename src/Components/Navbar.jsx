@@ -33,7 +33,7 @@ export default function Navbar() {
             <Link to="/speakers" className="text-white hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
               SPEAKERS
             </Link>
-            <Link to="'earphones" className="text-white hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
+            <Link to="/earphones" className="text-white hover:text-[#D87D4A] transition-colors duration-300 font-bold tracking-wider text-sm">
               EARPHONES
             </Link>
           </div>
