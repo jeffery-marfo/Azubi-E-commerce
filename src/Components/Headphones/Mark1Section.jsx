@@ -1,4 +1,5 @@
 // Import your headphones image
+import { Link } from 'react-router';
 import headPhone1 from '../../assets/images/Headphone1.png';
 
 export default function Mark1Section() {
@@ -20,9 +21,9 @@ export default function Mark1Section() {
             </p>
 
             {/* CTA Button */}
-            <button className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white font-bold py-4 px-8 tracking-wider text-sm transition-colors duration-300 uppercase">
+            <Link to='/markheadphoneDetail' className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white font-bold py-4 px-8 tracking-wider text-sm transition-colors duration-300 uppercase">
               See Product
-            </button>
+            </Link>
           </div>
 
           {/* Product Image */}
