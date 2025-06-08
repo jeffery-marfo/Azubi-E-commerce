@@ -1,6 +1,6 @@
 import React from "react";
 import headphones from '../assets/images/Headphones.png'
-import speakers from "../assets/images/speakers.png";
+import speakers from "../assets/images/speakers.png"
 import earPhones from "../assets/images/earphones.png";
 
 export default function ProductCategories() {
