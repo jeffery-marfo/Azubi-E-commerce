@@ -1,5 +1,5 @@
 import React from "react";
-import headPhones from "../assets/images/headphones.png";
+import headphones from '../assets/images/Headphones.png'
 import speakers from "../assets/images/speakers.png";
 import earPhones from "../assets/images/earphones.png";
 
@@ -8,7 +8,7 @@ export default function ProductCategories() {
     {
       id: "headphones",
       title: "HEADPHONES",
-      image: headPhones,
+      image: headphones,
     },
     {
       id: "speakers",
