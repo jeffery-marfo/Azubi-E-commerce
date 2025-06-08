@@ -13,7 +13,7 @@ export default function XX59Section() {
               <img 
                 src={whiteHeadphones}
                 alt="XX59 Headphones"
-                className="w-[100] h-[100] object-cover"
+                className="w-full h-full object-contain max-w-[320px] max-h-[320px]"
               />
              
             </div>

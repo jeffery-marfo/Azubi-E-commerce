@@ -27,18 +27,12 @@ export default function Mark1Section() {
 
           {/* Product Image */}
           <div className="order-2 lg:order-2">
-            <div className="bg-gray-200 rounded-lg aspect-square flex items-center justify-center overflow-hidden">
-              {/* Replace with your actual image */}
+            <div className="bg-gray-200 rounded-lg aspect-square flex items-center justify-center overflow-hidden p-8">
               <img 
                 src={headPhone1} 
                 alt="XX99 Mark I Headphones"
-                className="w-[100] h-[100] object-cover"
+                className="w-full h-full object-contain max-w-[320px] max-h-[320px]"
               />
-              {/* Temporary placeholder - remove when you add your image */}
-              {/* <div className="text-gray-500 text-center">
-                <p className="text-lg font-semibold mb-2">XX99 Mark I</p>
-                <p className="text-sm">Headphones Image</p>
-              </div> */}
             </div>
           </div>
         </div>
