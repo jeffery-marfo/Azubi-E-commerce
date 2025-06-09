@@ -1,5 +1,6 @@
 import React from 'react';
 import earphonesyx1 from '../assets/images/earphonesyx1.jpg'; 
+import { Link } from 'react-router';
 
 export default function YX1Earphones() {
   return (
@@ -21,9 +22,9 @@ export default function YX1Earphones() {
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-8 tracking-wide">
               YX1 EARPHONES
             </h2>
-            <button className="border border-black bg-transparent text-black hover:bg-black hover:text-white px-6 py-2.5 font-medium tracking-wide transition-all duration-300 uppercase text-sm w-fit">
+            <Link to='/earphoneDetail' className="border border-black bg-transparent text-black hover:bg-black hover:text-white px-6 py-2.5 font-medium tracking-wide transition-all duration-300 uppercase text-sm w-fit">
               SEE PRODUCT
-            </button>
+            </Link>
           </div>
         </div>
       </div>

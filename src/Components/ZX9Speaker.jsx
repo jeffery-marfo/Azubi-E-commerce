@@ -1,6 +1,7 @@
 
 import React from 'react';
 import speaKer from '../assets/images/Speaker.png';
+import { Link } from 'react-router';
 
 
 export default function ZX9Speaker() {
@@ -43,9 +44,9 @@ export default function ZX9Speaker() {
               Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.
             </p>
             <div className="flex justify-center lg:justify-start">
-              <button className="bg-black hover:bg-gray-800 text-white px-8 py-4 font-bold tracking-wider transition-colors duration-300 uppercase">
+              <Link to='/ZX9SpeakerDetail' className="bg-black hover:bg-gray-800 text-white px-8 py-4 font-bold tracking-wider transition-colors duration-300 uppercase">
                 SEE PRODUCT
-              </button>
+              </Link>
             </div>
           </div>
         </div>

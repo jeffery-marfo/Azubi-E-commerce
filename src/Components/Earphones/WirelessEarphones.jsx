@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import earPhones from '../../assets/images/Earphones.png';
 
 export default function YX1EarphonesSection() {
@@ -37,9 +38,9 @@ export default function YX1EarphonesSection() {
             </p>
 
             {/* CTA Button */}
-            <button className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white font-bold py-4 px-8 tracking-wider text-sm transition-colors duration-300 uppercase">
+            <Link to='/earphoneDetail' className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white font-bold py-4 px-8 tracking-wider text-sm transition-colors duration-300 uppercase">
               See Product
-            </button>
+            </Link>
           </div>
         </div>
       </div>

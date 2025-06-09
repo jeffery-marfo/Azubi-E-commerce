@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import speaKer from '../../assets/images/Speaker.png';
 
 export default function ZX9SpeakerSection() {
@@ -37,9 +38,9 @@ export default function ZX9SpeakerSection() {
             </p>
 
             {/* CTA Button */}
-            <button className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white font-bold py-4 px-8 tracking-wider text-sm transition-colors duration-300 uppercase">
+            <Link to='/ZX9SpeakerDetail' className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white font-bold py-4 px-8 tracking-wider text-sm transition-colors duration-300 uppercase">
               See Product
-            </button>
+            </Link>
           </div>
         </div>
       </div>
