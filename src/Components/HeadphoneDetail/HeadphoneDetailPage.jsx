@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
 import heahphoneImg from "../../assets/images/HeadphoneImg.png";
-
-
+import { useCart } from "../../contexts/CartContext";
 
 export default function HeadphoneDetailPage() {
   const [quantity, setQuantity] = useState(1);
+  const { addToCart, setIsCartOpen } = useCart();
 
   const handleQuantityChange = (increment) => {
     if (increment && quantity < 99) {
@@ -13,6 +13,20 @@ export default function HeadphoneDetailPage() {
     } else if (!increment && quantity > 1) {
       setQuantity(quantity - 1);
     }
+  };
+
+  const handleAddToCart = () => {
+    const product = {
+      id: "xx99-mark-ii",
+      name: "XX99 MARK II HEADPHONES",
+      price: 2999,
+      image: heahphoneImg,
+      slug: "xx99-mark-ii"
+    };
+    
+    addToCart(product, quantity);
+    setIsCartOpen(true);
+    setQuantity(1);
   };
 
   return (
@@ -88,7 +102,10 @@ export default function HeadphoneDetailPage() {
               </div>
 
               {/* Add to Cart Button */}
-              <button className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white px-8 py-3 font-bold tracking-widest uppercase transition-colors duration-200">
+              <button 
+                onClick={handleAddToCart}
+                className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white px-8 py-3 font-bold tracking-widest uppercase transition-colors duration-200"
+              >
                 Add to Cart
               </button>
             </div>
