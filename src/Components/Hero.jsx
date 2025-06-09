@@ -1,9 +1,10 @@
 
+import { Link } from 'react-router';
 import heRo from '../assets/images/hero.png'
 
 export default function Hero() {
   return (
-    <section className="bg-[#0E0E0E] text-white">
+    <section className="bg-[#000000] text-white">
       <div className="px-6 md:px-8 lg:px-12 xl:px-24">
         <div className="flex flex-col lg:flex-row items-center min-h-[600px] lg:min-h-[700px]">
           {/* Content */}
@@ -18,9 +19,9 @@ export default function Hero() {
             <p className="text-gray-300 text-lg leading-relaxed mb-8 max-w-md mx-auto lg:mx-0">
               Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.
             </p>
-            <button className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white px-8 py-4 font-bold tracking-wider transition-colors duration-300 uppercase">
+            <Link to='/headphoneDetail' className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white px-8 py-4 font-bold tracking-wider transition-colors duration-300 uppercase">
               SEE PRODUCT
-            </button>
+            </Link>
           </div>
           
           {/* Hero Image */}

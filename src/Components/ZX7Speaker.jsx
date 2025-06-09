@@ -1,6 +1,7 @@
 
 import React from 'react';
 import speakerTable from '../assets/images/speaker_nobg.png';
+import { Link } from 'react-router';
 
 export default function ZX7Speaker() {
   return (
@@ -24,9 +25,9 @@ export default function ZX7Speaker() {
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-black mb-4 sm:mb-6 tracking-wide leading-tight">
               ZX7 SPEAKER
             </h2>
-            <button className="border border-black bg-transparent text-black hover:bg-black hover:text-white px-4 sm:px-6 py-2 sm:py-2.5 font-medium tracking-wide transition-all duration-300 uppercase text-xs sm:text-sm">
+            <Link to='/ZX7SpeakerDetail' className="border border-black bg-transparent text-black hover:bg-black hover:text-white px-4 sm:px-6 py-2 sm:py-2.5 font-medium tracking-wide transition-all duration-300 uppercase text-xs sm:text-sm">
               SEE PRODUCT
-            </button>
+            </Link>
           </div>
         </div>
       </div>
