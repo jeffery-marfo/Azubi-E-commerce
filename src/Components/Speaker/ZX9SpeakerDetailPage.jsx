@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
-import ZX7speakerImg from "../../assets/images/ZX7speakerImg.png";
-
-
+import ZX7speakerImg from "../../assets/images/Speaker.png";
+import { useCart } from "../../contexts/CartContext";
 
 export default function ZX9SpeakerDetailPage() {
   const [quantity, setQuantity] = useState(1);
+  const { addToCart, setIsCartOpen } = useCart();
 
   const handleQuantityChange = (increment) => {
     if (increment && quantity < 99) {
@@ -15,13 +15,28 @@ export default function ZX9SpeakerDetailPage() {
     }
   };
 
+  const handleAddToCart = () => {
+    const product = {
+      id: "zx9",
+      name: "ZX9 SPEAKER",
+      price: 4500,
+      image: ZX7speakerImg,
+      slug: "zx9"
+    };
+    
+    addToCart(product, quantity);
+    setIsCartOpen(true);
+    // Reset quantity after adding to cart
+    setQuantity(1);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Main Container */}
       <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Go Back Button */}
         <Link
-          to="/headphones"
+          to="/speakers"
           className="text-gray-500 hover:text-gray-700 mb-12 text-sm font-medium transition-colors"
         >
           Go Back
@@ -34,7 +49,7 @@ export default function ZX9SpeakerDetailPage() {
             <div className="w-80 h-80 flex items-center justify-center">
               <img
                 src={ZX7speakerImg}
-                alt="XX99 Mark II Headphones"
+                alt="ZX9 Speaker"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -49,14 +64,14 @@ export default function ZX9SpeakerDetailPage() {
 
             {/* Product Title */}
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-             ZX9
+              ZX9
               <br />
               SPEAKER
             </h1>
 
             {/* Product Description */}
             <p className="text-gray-500 text-base leading-relaxed max-w-md">
-             Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.
+              Upgrade your sound system with the all new ZX9 active speaker. It's a bookshelf speaker system that offers truly wireless connectivity, creating new possibilities for more pleasing and practical audio setups.
             </p>
 
             {/* Price */}
@@ -84,9 +99,11 @@ export default function ZX9SpeakerDetailPage() {
                   +
                 </button>
               </div>
-
               {/* Add to Cart Button */}
-              <button className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white px-8 py-3 font-bold tracking-widest uppercase transition-colors duration-200">
+              <button 
+                onClick={handleAddToCart}
+                className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white px-8 py-3 font-bold tracking-widest uppercase transition-colors duration-200"
+              >
                 Add to Cart
               </button>
             </div>
@@ -102,10 +119,10 @@ export default function ZX9SpeakerDetailPage() {
             </h2>
             <div className="space-y-6 text-gray-500 leading-relaxed">
               <p>
-                Reap the advantages of a flat diaphragm tweeter cone. This provides a fast response rate and excellent high frequencies that lower tiered bookshelf speakers cannot provide. The woofers are made from aluminum that produces a unique and clear sound. XLR inputs allow you to connect to a mixer for more advanced usage.
+                Connect via Bluetooth or nearly any wired source. This speaker features optical, digital coaxial, USB Type-B, stereo RCA, and XLR inputs, allowing you to connect up to five different sources. The built-in Bluetooth 5.0 technology ensures seamless wireless connectivity with your devices.
               </p>
               <p>
-                The ZX7 speaker is the perfect blend of stylish design and high performance. It houses an encased MDF wooden enclosure which minimises acoustic resonance. Dual connectivity allows pairing through bluetooth or traditional optical and RCA input. Switch input sources and control volume at your finger tips with the included wireless remote. This versatile speaker is equipped to deliver an authentic listening experience.
+                The ZX9 features high-end components including a 6.5" aluminum dome tweeter and a proprietary midrange driver. The specially designed speaker suspension reduces distortion for enhanced clarity. The multi-way ported enclosure is crafted from MDF and features a high-gloss finish that complements any room's decor.
               </p>
             </div>
           </div>
@@ -138,19 +155,18 @@ export default function ZX9SpeakerDetailPage() {
                 <span className="text-[#D87D4A] font-bold mr-8 min-w-[30px]">
                   1x
                 </span>
-                <span className="text-gray-500">3.5mm 7.5m Audio Cable</span>
+                <span className="text-gray-500">3.5mm 10m Audio Cable</span>
               </div>
               <div className="flex items-center">
                 <span className="text-[#D87D4A] font-bold mr-8 min-w-[30px]">
                   1x
                 </span>
-                <span className="text-gray-500">7.5m Optical Cable</span>
+                <span className="text-gray-500">10m Optical Cable</span>
               </div>
             </div>
           </div>
         </section>
       </div>
-      
     </div>
   );
 }

@@ -8,32 +8,34 @@ import Earphones from "./Pages/Earphones";
 import HeadphoneDetail from "./Pages/HeadphoneDetail";
 import MarkHeadphonesDetail from "./Pages/MarkHeadphonesDetail";
 import XX59SectionDetail from "./Pages/XX59SectionDetail";
-
 import ZX7SpeakerDetail from "./Pages/ZX7SpeakerDetail";
 import ZX9SpeakerDetail from "./Pages/ZX9SpeakerDetail";
 import EarphonesDetail from "./Pages/EarphonesDetail";
+import { CartProvider } from "./contexts/CartContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<RootLayouts />}>
-          <Route index={true} element={<Landing />} />
-          <Route path="/headphones" element={<Headphones />} />
-          <Route path="/speakers" element={<Speakers />} />
-          <Route path="/earphones" element={<Earphones />} />
-          <Route path="/headphoneDetail" element={<HeadphoneDetail />} />
-          <Route
-            path="/markheadphoneDetail"
-            element={<MarkHeadphonesDetail />}
-          />
-          <Route path="/XX59DetailedPage" element={<XX59SectionDetail />} />
-          <Route path="/ZX7SpeakerDetail" element={<ZX7SpeakerDetail />} />
-          <Route path="/ZX9SpeakerDetail" element={<ZX9SpeakerDetail />} />
-          <Route path="/earphoneDetail" element={<EarphonesDetail/>} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<RootLayouts />}>
+            <Route index={true} element={<Landing />} />
+            <Route path="/headphones" element={<Headphones />} />
+            <Route path="/speakers" element={<Speakers />} />
+            <Route path="/earphones" element={<Earphones />} />
+            <Route path="/headphoneDetail" element={<HeadphoneDetail />} />
+            <Route
+              path="/markheadphoneDetail"
+              element={<MarkHeadphonesDetail />}
+            />
+            <Route path="/XX59DetailedPage" element={<XX59SectionDetail />} />
+            <Route path="/ZX7SpeakerDetail" element={<ZX7SpeakerDetail />} />
+            <Route path="/ZX9SpeakerDetail" element={<ZX9SpeakerDetail />} />
+            <Route path="/earphoneDetail" element={<EarphonesDetail/>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
-import heahphoneImg from "../../assets/images/HeadphoneImg.png";
+import heahphoneImg from "../../assets/images/Headphones.png";
+import { useCart } from "../../contexts/CartContext";
 
 export default function MarkHeadphonesDetailPage() {
   const [quantity, setQuantity] = useState(1);
+  const { addToCart, setIsCartOpen } = useCart();
 
   const handleQuantityChange = (increment) => {
     if (increment && quantity < 99) {
@@ -11,6 +13,21 @@ export default function MarkHeadphonesDetailPage() {
     } else if (!increment && quantity > 1) {
       setQuantity(quantity - 1);
     }
+  };
+
+  const handleAddToCart = () => {
+    const product = {
+      id: "xx99-mark-i",
+      name: "XX99 MARK I HEADPHONES",
+      price: 1750,
+      image: heahphoneImg,
+      slug: "xx99-mark-i"
+    };
+    
+    addToCart(product, quantity);
+    setIsCartOpen(true);
+    // Reset quantity after adding to cart
+    setQuantity(1);
   };
 
   return (
@@ -32,7 +49,7 @@ export default function MarkHeadphonesDetailPage() {
             <div className="w-80 h-80 flex items-center justify-center">
               <img
                 src={heahphoneImg}
-                alt="XX99 Mark II Headphones"
+                alt="XX99 Mark I Headphones"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -54,10 +71,7 @@ export default function MarkHeadphonesDetailPage() {
 
             {/* Product Description */}
             <p className="text-gray-500 text-base leading-relaxed max-w-md">
-              As the gold standard for headphones, the classic XX99 Mark I
-              offers detailed and accurate audio reproduction for audiophiles,
-              mixing engineers, and music aficionados alike in studios and on
-              the go.
+              As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.
             </p>
 
             {/* Price */}
@@ -87,12 +101,16 @@ export default function MarkHeadphonesDetailPage() {
               </div>
 
               {/* Add to Cart Button */}
-              <button className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white px-8 py-3 font-bold tracking-widest uppercase transition-colors duration-200">
+              <button 
+                onClick={handleAddToCart}
+                className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white px-8 py-3 font-bold tracking-widest uppercase transition-colors duration-200"
+              >
                 Add to Cart
               </button>
             </div>
           </div>
         </section>
+
 
         {/* Features and In The Box Section */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-20">
@@ -103,20 +121,10 @@ export default function MarkHeadphonesDetailPage() {
             </h2>
             <div className="space-y-6 text-gray-500 leading-relaxed">
               <p>
-                As the headphones all others are measured against, the XX99 Mark
-                I demonstrates over five decades of audio expertise, redefining
-                the critical listening experience. This pair of closed-back
-                headphones are made of industrial, aerospace-grade materials to
-                emphasize durability at a relatively light weight of 11 oz.
+                As the headphones all others are measured against, the XX99 Mark I demonstrates over five decades of audio expertise, redefining the critical listening experience. This pair of closed-back headphones is made of industrial, aerospace-grade materials to emphasize durability at a relatively light weight of 11 oz.
               </p>
               <p>
-                From the handcrafted microfiber ear cushions to the robust metal
-                headband with inner damping element, the components work
-                together to deliver comfort and uncompromising sound. Its
-                closed-back design delivers up to 27 dB of passive noise
-                cancellation, reducing resonance by reflecting sound to a
-                dedicated absorber. For connectivity, a specially tuned cable is
-                included with a balanced gold connector.
+                From the handcrafted microfiber ear cushions to the robust metal headband with inner damping element, the components work together to deliver pure sound quality and enhanced comfort. The XX99 Mark I is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.
               </p>
             </div>
           </div>
@@ -151,7 +159,6 @@ export default function MarkHeadphonesDetailPage() {
                 </span>
                 <span className="text-gray-500">3.5mm 5m Audio Cable</span>
               </div>
-              
             </div>
           </div>
         </section>

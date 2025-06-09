@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
 import whiteHeadphones from "../../assets/images/whiteHeadphones.png";
+import { useCart } from "../../contexts/CartContext";
 
 export default function XX59DetailedPage() {
   const [quantity, setQuantity] = useState(1);
+  const { addToCart, setIsCartOpen } = useCart();
 
   const handleQuantityChange = (increment) => {
     if (increment && quantity < 99) {
@@ -11,6 +13,21 @@ export default function XX59DetailedPage() {
     } else if (!increment && quantity > 1) {
       setQuantity(quantity - 1);
     }
+  };
+
+  const handleAddToCart = () => {
+    const product = {
+      id: "xx59",
+      name: "XX59 HEADPHONES",
+      price: 899,
+      image: whiteHeadphones,
+      slug: "xx59"
+    };
+    
+    addToCart(product, quantity);
+    setIsCartOpen(true);
+    // Reset quantity after adding to cart
+    setQuantity(1);
   };
 
   return (
@@ -32,7 +49,7 @@ export default function XX59DetailedPage() {
             <div className="w-80 h-80 flex items-center justify-center">
               <img
                 src={whiteHeadphones}
-                alt="whiteHeadphones"
+                alt="XX59 Headphones"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -54,9 +71,7 @@ export default function XX59DetailedPage() {
 
             {/* Product Description */}
             <p className="text-gray-500 text-base leading-relaxed max-w-md">
-              Enjoy your audio almost anywhere and customize it to your specific
-              tastes with the XX59 headphones. The stylish yet durable versatile
-              wireless headset is a brilliant companion at home or on the move.
+              Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.
             </p>
 
             {/* Price */}
@@ -84,9 +99,11 @@ export default function XX59DetailedPage() {
                   +
                 </button>
               </div>
-
               {/* Add to Cart Button */}
-              <button className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white px-8 py-3 font-bold tracking-widest uppercase transition-colors duration-200">
+              <button 
+                onClick={handleAddToCart}
+                className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white px-8 py-3 font-bold tracking-widest uppercase transition-colors duration-200"
+              >
                 Add to Cart
               </button>
             </div>
@@ -102,20 +119,10 @@ export default function XX59DetailedPage() {
             </h2>
             <div className="space-y-6 text-gray-500 leading-relaxed">
               <p>
-                These headphones have been created from durable, high-quality
-                materials tough enough to take anywhere. Its compact folding
-                design fuses comfort and minimalist style making it perfect for
-                travel. Flawless transmission is assured by the latest wireless
-                technology engineered for audio synchronization with videos.
+                These headphones have been created from durable, high-quality materials tough enough to take anywhere. Its compact folding design fuses comfort and minimalist style making it perfect for travel. Flawless transmission is assured by the latest wireless technology engineered for audio synchronization with videos.
               </p>
               <p>
-                More than a simple pair of headphones, this headset features a
-                pair of built-in microphones for clear, hands-free calling when
-                paired with a compatible smartphone. Controlling music and calls
-                is also intuitive thanks to easy-access touch buttons on the
-                earcups. Regardless of how you use the XX59 headphones, you can
-                do so all day thanks to an impressive 30-hour battery life that
-                can be rapidly recharged via USB-C.
+                More than a simple pair of headphones, this headset features a pair of built-in microphones for clear, hands-free calling when paired with a compatible smartphone. Controlling music and calls is also intuitive thanks to easy-access touch buttons on the earcups. Regardless of how you use the XX59 headphones, you can do so all day thanks to an impressive 30-hour battery life that can be rapidly recharged via USB-C.
               </p>
             </div>
           </div>

@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
 import earPhones from "../../assets/images/Earphones.png";
+import { useCart } from "../../contexts/CartContext";
 
 export default function EarphoneDetailPage() {
   const [quantity, setQuantity] = useState(1);
+  const { addToCart, setIsCartOpen } = useCart();
 
   const handleQuantityChange = (increment) => {
     if (increment && quantity < 99) {
@@ -13,13 +15,28 @@ export default function EarphoneDetailPage() {
     }
   };
 
+  const handleAddToCart = () => {
+    const product = {
+      id: "yx1",
+      name: "YX1 WIRELESS EARPHONES",
+      price: 599,
+      image: earPhones,
+      slug: "yx1"
+    };
+    
+    addToCart(product, quantity);
+    setIsCartOpen(true);
+    // Reset quantity after adding to cart
+    setQuantity(1);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Main Container */}
       <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Go Back Button */}
         <Link
-          to="/headphones"
+          to="/earphones"
           className="text-gray-500 hover:text-gray-700 mb-12 text-sm font-medium transition-colors"
         >
           Go Back
@@ -32,7 +49,7 @@ export default function EarphoneDetailPage() {
             <div className="w-80 h-80 flex items-center justify-center">
               <img
                 src={earPhones}
-                alt="earPhones img"
+                alt="YX1 Wireless Earphones"
                 className="w-full h-full object-contain"
               />
             </div>
@@ -54,10 +71,7 @@ export default function EarphoneDetailPage() {
 
             {/* Product Description */}
             <p className="text-gray-500 text-base leading-relaxed max-w-md">
-              Tailor your listening experience with bespoke dynamic drivers from
-              the new YX1 Wireless Earphones. Enjoy incredible high-fidelity
-              sound even in noisy environments with its active noise
-              cancellation feature.
+              Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. The perfect balance of high-fidelity sound and supreme comfort, these earphones feature a lightweight aluminum housing with a durable finish.
             </p>
 
             {/* Price */}
@@ -85,9 +99,11 @@ export default function EarphoneDetailPage() {
                   +
                 </button>
               </div>
-
               {/* Add to Cart Button */}
-              <button className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white px-8 py-3 font-bold tracking-widest uppercase transition-colors duration-200">
+              <button 
+                onClick={handleAddToCart}
+                className="bg-[#D87D4A] hover:bg-[#FBAF85] text-white px-8 py-3 font-bold tracking-widest uppercase transition-colors duration-200"
+              >
                 Add to Cart
               </button>
             </div>
@@ -103,21 +119,10 @@ export default function EarphoneDetailPage() {
             </h2>
             <div className="space-y-6 text-gray-500 leading-relaxed">
               <p>
-                Experience unrivalled stereo sound thanks to innovative acoustic
-                technology. With improved ergonomics designed for full day
-                wearing, these revolutionary earphones have been finely crafted
-                to provide you with the perfect fit, delivering complete comfort
-                all day long while enjoying exceptional noise isolation and
-                truly immersive sound.
+                Experience unrivalled stereo sound thanks to innovative acoustic technology. With improved ergonomics designed for full day wearing, these revolutionary earphones have been finely crafted to provide you with the perfect fit, delivering complete comfort all day long while enjoying exceptional noise isolation and truly immersive sound.
               </p>
               <p>
-                The YX1 Wireless Earphones features customizable controls for
-                volume, music, calls, and voice assistants built into both
-                earbuds. The new 7-hour battery life can be extended up to 28
-                hours with the charging case, giving you uninterrupted play
-                time. Exquisite craftsmanship with a splash resistant design now
-                available in an all new white and grey color scheme as well as
-                the popular classic black.
+                The YX1 Wireless Earphones features customizable controls for volume, music, calls, and voice assistants built into both earbuds. The intuitive 4-hour quick charge capability provides up to 24 hours of playtime. Connect with 2.4GHz wireless or plug in with the included 3.5mm audio cable for lossless audio quality.
               </p>
             </div>
           </div>
@@ -136,7 +141,7 @@ export default function EarphoneDetailPage() {
               </div>
               <div className="flex items-center">
                 <span className="text-[#D87D4A] font-bold mr-8 min-w-[30px]">
-                  2x
+                  6x
                 </span>
                 <span className="text-gray-500">Multi-size Earplugs</span>
               </div>
