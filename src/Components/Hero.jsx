@@ -1,6 +1,5 @@
-
 import { Link } from 'react-router';
-import heRo from '../assets/images/hero.png'
+import heRo from '../assets/images/headphonenoBg.png'
 
 export default function Hero() {
   return (
@@ -28,12 +27,12 @@ export default function Hero() {
           <div className="flex-1 flex justify-center lg:justify-end py-8 lg:py-0">
             <div className="relative">
               {/* Headphone image container - Made significantly larger */}
-              <div className="relative z-10 w-100 h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] xl:w-[550px] xl:h-[550px] flex items-center justify-center">
+              <div className="relative z-10 w-full h-96 md:w-full md:h-[500px] lg:w-[600px] lg:h-[600px] xl:w-[700px] xl:h-[700px] flex items-center justify-center">
                 {/* Replace this img src with your headphone image */}
                 <img 
                   src={heRo} 
                   alt="XX99 Mark II Headphones" 
-                  className="w-72 h-72 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] xl:w-[500px] xl:h-[500px] object-contain filter drop-shadow-2xl"
+                  className="w-full h-full max-w-[500px] max-h-[500px] md:max-w-[600px] md:max-h-[600px] lg:max-w-[700px] lg:max-h-[700px] object-contain filter drop-shadow-2xl"
                   onError={(e) => {
                     // Fallback placeholder if image doesn't load
                     e.target.style.display = 'none';
@@ -41,7 +40,7 @@ export default function Hero() {
                   }}
                 />
                 {/* Placeholder fallback - Also made larger */}
-                <div className="w-72 h-72 md:w-80 md:h-80 lg:w-[450px] lg:h-[450px] xl:w-[500px] xl:h-[500px] bg-gradient-to-br from-gray-700 to-gray-900 rounded-full items-center justify-center text-gray-400 text-center p-8 hidden">
+                <div className="w-full h-full max-w-[500px] max-h-[500px] md:max-w-[600px] md:max-h-[600px] lg:max-w-[700px] lg:max-h-[700px] bg-gradient-to-br from-gray-700 to-gray-900 rounded-full items-center justify-center text-gray-400 text-center p-8 hidden">
                   <div>
                     <div className="text-6xl mb-4">🎧</div>
                     <p className="text-sm">Replace with your headphone image</p>

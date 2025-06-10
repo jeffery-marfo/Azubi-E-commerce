@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Landing from "./Pages/Landing";
 import RootLayouts from "./layouts/RootLayouts";
@@ -11,6 +11,7 @@ import XX59SectionDetail from "./Pages/XX59SectionDetail";
 import ZX7SpeakerDetail from "./Pages/ZX7SpeakerDetail";
 import ZX9SpeakerDetail from "./Pages/ZX9SpeakerDetail";
 import EarphonesDetail from "./Pages/EarphonesDetail";
+import CheckoutPage from "./Pages/CheckoutPage";
 import { CartProvider } from "./contexts/CartContext";
 
 function App() {
@@ -31,7 +32,8 @@ function App() {
             <Route path="/XX59DetailedPage" element={<XX59SectionDetail />} />
             <Route path="/ZX7SpeakerDetail" element={<ZX7SpeakerDetail />} />
             <Route path="/ZX9SpeakerDetail" element={<ZX9SpeakerDetail />} />
-            <Route path="/earphoneDetail" element={<EarphonesDetail/>} />
+            <Route path="/earphoneDetail" element={<EarphonesDetail />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
