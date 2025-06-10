@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram } from 'lucide-react';
+import { Link } from 'react-router';
 
 export default function Footer() {
   return (
@@ -18,18 +19,18 @@ export default function Footer() {
             
             {/* Navigation */}
             <nav className="flex flex-col lg:flex-row gap-4 lg:gap-8">
-              <a href="#" className="text-white  hover:text-[#D87D4A] transition-colors duration-300 font-medium tracking-wide">
+              <Link to="/" className="text-white  hover:text-[#D87D4A] transition-colors duration-300 font-medium tracking-wide">
                 HOME
-              </a>
-              <a href="#" className="text-white  hover:text-[#D87D4A] transition-colors duration-300 font-medium tracking-wide">
+              </Link>
+              <Link to="/headphones" className="text-white  hover:text-[#D87D4A] transition-colors duration-300 font-medium tracking-wide">
                 HEADPHONES
-              </a>
-              <a href="#" className="text-white  hover:text-[#D87D4A] transition-colors duration-300 font-medium tracking-wide">
+              </Link>
+              <Link to="/speakers" className="text-white  hover:text-[#D87D4A] transition-colors duration-300 font-medium tracking-wide">
                 SPEAKERS
-              </a>
-              <a href="#" className="text-white  hover:text-[#D87D4A] transition-colors duration-300 font-medium tracking-wide">
+              </Link>
+              <Link to="/earphones" className="text-white  hover:text-[#D87D4A] transition-colors duration-300 font-medium tracking-wide">
                 EARPHONES
-              </a>
+              </Link>
             </nav>
           </div>
 

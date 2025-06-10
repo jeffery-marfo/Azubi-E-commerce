@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../contexts/CartContext';
 
 const Cart = () => {
+  const navigate = useNavigate();
   const { 
     cartItems, 
     isCartOpen, 
@@ -11,6 +13,22 @@ const Cart = () => {
     getCartTotal,
     clearCart 
   } = useCart();
+
+  const handleCheckout = () => {
+    console.log('Proceed to checkout');
+    
+    // Check if cart is empty
+    if (cartItems.length === 0) {
+      console.log('Cart is empty, not navigating');
+      return;
+    }
+    
+    // Close the cart modal
+    setIsCartOpen(false);
+    
+    // Navigate to checkout page
+    navigate('/checkout');
+  };
 
   if (!isCartOpen) return null;
 
@@ -91,11 +109,8 @@ const Cart = () => {
               </div>
               <button 
                 className="w-full bg-[#D87D4A] hover:bg-[#FBAF85] text-white py-3 px-6 font-bold rounded-md transition-colors duration-200 flex items-center justify-center"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  // Navigate to checkout
-                  console.log('Proceed to checkout');
-                }}
+                onClick={handleCheckout}
+                disabled={cartItems.length === 0}
               >
                 CHECKOUT
                 <svg 
